@@ -1,7 +1,7 @@
 import React from 'react';
 
 const NotFound = () => (
-    <div>
+    <div className="mwg-wrap notFound">
         <h2>Page Not Found</h2>
     </div>
 );

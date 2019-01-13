@@ -1,0 +1,1 @@
+export const FORM_SUBMIT = 'form/FORM_SUBMIT'

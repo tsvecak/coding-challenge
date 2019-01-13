@@ -1,0 +1,60 @@
+// Vars
+// Colors
+$white: #fff;
+$black: #000;
+$silver: #aaa;
+$white-transp: rgba($white, .9);
+$mwg-green: #3bc84c;
+$mwg-green-transp: rgba($mwg-green, .9);
+
+// Other
+$box-shadow: 0px 4px 10px 0px rgba(0,0,0,0.5);
+$border-radius: 2px;
+// END Vars
+
+// Application Default Styles
+html,
+body,
+#root,
+.mwg-app {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    min-height: 100vh;
+}
+body {
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 16px;
+    // Make font look smoother
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+p {
+    margin: 0 0 1rem;
+}
+// END Application Default Styles
+
+// MWG APP
+.mwg-app {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+    background-color: $white;
+    background-image: url(./images/bg-image.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+// END MWG APP
+
+// MWG Wrapper
+.mwg-wrap {
+    width: 100%;
+    max-width: 640px;
+
+    padding: 1rem 1.2rem;
+
+    background: $mwg-green-transp;
+    box-shadow: $box-shadow;
+}
+// END MWG Wrapper

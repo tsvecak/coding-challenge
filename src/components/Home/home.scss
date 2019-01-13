@@ -1,0 +1,23 @@
+.mwg-wrap{
+    &.home {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        flex-direction: column;
+
+        color: $white;
+
+        h2 {
+            font-size: 3rem;
+            text-align: center;
+
+            margin: 2rem 0;
+            width: 100%;
+        }
+
+        button {
+            align-self: flex-end;
+        }
+    }
+}

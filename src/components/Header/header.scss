@@ -1,0 +1,44 @@
+.mwg-nav {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    background: $mwg-green;
+    color: $white;
+    box-shadow: $box-shadow;
+    
+    padding: 1rem;
+
+    svg {
+        width: 150px;
+
+        path {
+            fill: $white;
+        }
+
+    }
+    
+    ul {
+        display: flex;
+
+        list-style: none;
+
+        margin: 0;
+        padding: 0;
+
+        li {
+
+            &:first-child {
+                margin-left: 0;
+            }
+
+            margin-left: .5rem;
+            a {
+                color: $white;
+            }
+
+        }
+    }
+}
