@@ -11,7 +11,7 @@ const AccordionTitle = ({
 }) => (
   <button
     className={`flex items-center justify-between w-full p-2 font-medium rtl:text-right text-gray-500 focus:ring-4 focus:ring-gray-200 gap-3 border-b-2 ${
-      active ? " bg-slate-500 text-white" : ""
+      active ? " bg-slate-100" : ""
     }`}
     onClick={() => handleChange()}
     data-testid="accordion-title"

@@ -42,7 +42,7 @@ const ChaptersList = ({ itemsList, items }: ChaptersListProps) => {
   };
 
   return (
-    <div className="grid grid-cols-4 w-full gap-4 h-full max-h-full">
+    <div className="grid grid-cols-4 w-full h-full max-h-full">
       <div className="col-span-1">
         <div className="col-span-1 max-h-svh overflow-auto sticky top-0">
           {itemsList.map((item) => (
@@ -57,7 +57,7 @@ const ChaptersList = ({ itemsList, items }: ChaptersListProps) => {
           ))}
         </div>
       </div>
-      <div className="col-span-3">
+      <div className="col-span-3 bg-slate-100 p-2">
         {/* 
           Backend data is correctly sorted in given example, 
           if that were not the case we would have to either 

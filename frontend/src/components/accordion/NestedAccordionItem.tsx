@@ -81,7 +81,7 @@ const NestedAccordionItem = ({
         />
       </h2>
       <div className={isOpen ? "" : "hidden"}>
-        <div className="p-2">
+        <div className="py-2 pl-2">
           {accordion.children &&
             accordion.children.length > 0 &&
             accordion.children.map((nestedAccordion) => (
