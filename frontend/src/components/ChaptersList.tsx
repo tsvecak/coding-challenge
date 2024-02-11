@@ -19,7 +19,8 @@ const ChaptersList = ({ itemsList, items }: ChaptersListProps) => {
   const [currentActiveLevelTwo, setCurrentActiveLevelTwo] = useState("");
 
   const handleChangeActive = (activeItem: Chapter) => {
-    if (currentActive === activeItem?.id) {
+    const activeItemId = activeItem.id;
+    if (currentActive === activeItemId) {
       setCurrentActive("");
     } else {
       if (activeItem.level === 2) {
@@ -35,9 +36,9 @@ const ChaptersList = ({ itemsList, items }: ChaptersListProps) => {
           setCurrentActiveLevelOne(findActiveParentLevelOne.id);
         }
       } else {
-        setCurrentActiveLevelOne(activeItem.id);
+        setCurrentActiveLevelOne(activeItemId);
       }
-      setCurrentActive(activeItem.id);
+      setCurrentActive(activeItemId);
     }
   };
 
@@ -51,8 +52,8 @@ const ChaptersList = ({ itemsList, items }: ChaptersListProps) => {
               accordion={item}
               setActiveAccordion={handleChangeActive}
               activeAccordion={currentActive}
-              currentActiveLevelOne={currentActiveLevelOne}
-              currentActiveLevelTwo={currentActiveLevelTwo}
+              accordionOpen={currentActiveLevelOne === item.id}
+              activeNestedAccordion={currentActiveLevelTwo}
             />
           ))}
         </div>

@@ -9,24 +9,24 @@ import { Chapter } from "@/types/chapter";
 type ChapterItemProps = {
   accordion: Chapter;
   activeAccordion?: string;
-  currentActiveLevelOne?: string;
-  currentActiveLevelTwo?: string;
+  activeNestedAccordion?: string;
   setActiveAccordion: (item: Chapter) => void;
+  accordionOpen: boolean;
 };
 
-// Could be improved by using generic types to avoid using Chapter typing here
 const NestedAccordionItem = ({
   accordion,
   setActiveAccordion,
   activeAccordion,
-  currentActiveLevelOne,
-  currentActiveLevelTwo,
+  activeNestedAccordion,
+  accordionOpen,
 }: ChapterItemProps) => {
   const hasAccordions = accordion.children && accordion.children.length > 0;
+
   const active =
     activeAccordion === accordion.id ||
-    currentActiveLevelOne === accordion.id ||
-    currentActiveLevelTwo === accordion.id;
+    accordionOpen ||
+    activeNestedAccordion === accordion.id;
 
   const [isActive, setIsActive] = useState(active);
   const [isOpen, setIsOpen] = useState(isActive);
@@ -62,10 +62,7 @@ const NestedAccordionItem = ({
       <AccordionTitle
         label={accordion.name}
         hasChildren={false}
-        active={
-          currentActiveLevelOne === accordion.id ||
-          activeAccordion === accordion.id
-        }
+        active={accordionOpen || activeAccordion === accordion.id}
         handleChange={() => handleChange(accordion)}
       />
     );
@@ -76,7 +73,7 @@ const NestedAccordionItem = ({
       <h2>
         <AccordionTitle
           label={accordion.name}
-          active={currentActiveLevelOne === accordion.id}
+          active={accordionOpen}
           handleChange={() => handleChange(accordion, true)}
         />
       </h2>
@@ -92,7 +89,7 @@ const NestedAccordionItem = ({
                 hasChildren={false}
                 active={
                   nestedAccordion.id === activeAccordion ||
-                  nestedAccordion.id === currentActiveLevelTwo
+                  nestedAccordion.id === activeNestedAccordion
                 }
                 handleChange={() => handleChange(nestedAccordion)}
               />
